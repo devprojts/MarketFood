@@ -1,4 +1,5 @@
 class Order{
+
 constructor(
         public address: string,
         public number: number,
@@ -12,6 +13,10 @@ constructor(
 }
 
 class OrderItem{
-    constructor(public quantity: number, public menuId: string ){}
+    constructor(
+        public quantity: number, 
+        public menuId: string )
+    {}
 }
 
+export{Order, OrderItem}
