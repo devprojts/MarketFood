@@ -7,6 +7,7 @@ import { RestaurantDetaillComponent } from './restaurant-detaill/restaurant-deta
 import { MenuComponent } from './restaurant-detaill/menu/menu.component'
 import { ReviewsComponent } from './restaurant-detaill/reviews/reviews.component'
 import { OrderComponent } from './order/order.component'
+import { OrderSummaryComponent } from './order-summary/order-summary.component'
 
 
 export const ROUTES: Routes=[
@@ -17,9 +18,9 @@ export const ROUTES: Routes=[
            children:[
                 {path:'', redirectTo: 'menu', pathMatch:'full'},   
                 {path: 'menu', component: MenuComponent},
-                {path: 'reviews', component: ReviewsComponent}
-                ]},        
+                {path: 'reviews', component: ReviewsComponent}]},        
                 {path:'order', component:OrderComponent},                        
+                {path:'order-summary', component:OrderSummaryComponent},                        
         {path:'about', component:AboutComponent},        
         
 ]

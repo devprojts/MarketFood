@@ -5,8 +5,7 @@ import { Order } from "./order.model";
 import { Observable } from "rxjs/Observable";
 import { Http, RequestOptions, Headers } from "@angular/http";
 import { MEAT_API} from "../app.api"
-
-
+import 'rxjs/add/operator/map'
 
 @Injectable()
 export class OrderService{
@@ -36,15 +35,19 @@ export class OrderService{
     }
 
     clear(){
-        this.cartService.clear
+        this.cartService.clear()
     }
 
     checkOrder(order: Order):Observable<string>{
+        
         const headers = new Headers()
+        
         headers.append('Content-Type', 'application/json')
+        
         return this.http.post(`${MEAT_API}/orders`, 
                                 JSON.stringify(order), 
                                 new RequestOptions({headers: headers}))
                         .map(response => response.json())
+                        .map(order => order.id)
     }
 }
