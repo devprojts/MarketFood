@@ -37,6 +37,5 @@ export class RatingComponent implements OnInit {
       this.rate == this.previousRate
       this.previousRate = undefined
     }
-
   }
 }
